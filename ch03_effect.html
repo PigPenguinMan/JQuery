@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        #square{
+            width: 100px;
+            height: 100px;
+            border: 2px solid salmon;
+            background-color: darkslategray;
+        }
+        #square2{
+            position: fixed ; 
+            top:10px; right:10px;
+            width: 100px;
+            height: 100px;
+            border: 2px solid salmon;
+            background-color: lightslategray;
+        }
+    </style>
+</head>
+<body>
+    <button id="title_btn"></button>
+    <h1 id="title">안녕하세요 </h1>
+    
+    <button id="toggle_btn"></button>
+    <h1 id="tgl_h1" style="display: none;">toggle로 보이게 했습니다</h1>
+
+
+    <div id="square"></div>
+    <button id="toggle_btn2"></button>
+    <div id="square2" ></div>
+
+    <script>
+        $("#title").on( "mouseenter",function(){
+            $("#title").hide(1000);
+        })
+        $("#title_btn").on( "click",function(){
+            $("#title").toggle("slow");
+        })
+        $("#toggle_btn").on("click",function(){
+            $("#tgl_h1").toggle("slow");
+        })
+        $("#toggle_btn").on("mouseenter",function(){
+            $("#square").fadeIn("slow");
+        })
+        $("#square").on("mouseleave",function(){
+            $("#square").fadeOut("slow");
+        })
+        $("#toggle_btn2").on("click",function(){
+            $("#square2").slideToggle();
+        })
+    </script>
+</body>
+</html>
